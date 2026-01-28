@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body style="text-align: center; font-family: Arial; padding: 40px">
+    <h3>Chat with us on WhatsApp</h3>
+    <a
+      id="wa"
+      style="
+        background: #25d366;
+        color: white;
+        padding: 15px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+      "
+    >
+      Open WhatsApp
+    </a>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const phone = params.get("phone");
+      const text = params.get("text");
+      document.getElementById("wa").href =
+        `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    </script>
+  </body>
+</html>
